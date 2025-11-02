@@ -9,3 +9,15 @@ D:\posheh darsi\پروژه وبلاگ\BlogApp\BlogApp.Domain\obj\Debug\net8.0\Bl
 D:\posheh darsi\پروژه وبلاگ\BlogApp\BlogApp.Domain\obj\Debug\net8.0\refint\BlogApp.Domain.dll
 D:\posheh darsi\پروژه وبلاگ\BlogApp\BlogApp.Domain\obj\Debug\net8.0\BlogApp.Domain.pdb
 D:\posheh darsi\پروژه وبلاگ\BlogApp\BlogApp.Domain\obj\Debug\net8.0\ref\BlogApp.Domain.dll
+D:\posheh darsi\blog project\BlogApp\BlogApp.Domain\bin\Debug\net8.0\BlogApp.Domain.deps.json
+D:\posheh darsi\blog project\BlogApp\BlogApp.Domain\bin\Debug\net8.0\BlogApp.Domain.dll
+D:\posheh darsi\blog project\BlogApp\BlogApp.Domain\bin\Debug\net8.0\BlogApp.Domain.pdb
+D:\posheh darsi\blog project\BlogApp\BlogApp.Domain\obj\Debug\net8.0\BlogApp.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\posheh darsi\blog project\BlogApp\BlogApp.Domain\obj\Debug\net8.0\BlogApp.Domain.AssemblyInfoInputs.cache
+D:\posheh darsi\blog project\BlogApp\BlogApp.Domain\obj\Debug\net8.0\BlogApp.Domain.AssemblyInfo.cs
+D:\posheh darsi\blog project\BlogApp\BlogApp.Domain\obj\Debug\net8.0\BlogApp.Domain.csproj.CoreCompileInputs.cache
+D:\posheh darsi\blog project\BlogApp\BlogApp.Domain\obj\Debug\net8.0\BlogApp.Domain.sourcelink.json
+D:\posheh darsi\blog project\BlogApp\BlogApp.Domain\obj\Debug\net8.0\BlogApp.Domain.dll
+D:\posheh darsi\blog project\BlogApp\BlogApp.Domain\obj\Debug\net8.0\refint\BlogApp.Domain.dll
+D:\posheh darsi\blog project\BlogApp\BlogApp.Domain\obj\Debug\net8.0\BlogApp.Domain.pdb
+D:\posheh darsi\blog project\BlogApp\BlogApp.Domain\obj\Debug\net8.0\ref\BlogApp.Domain.dll

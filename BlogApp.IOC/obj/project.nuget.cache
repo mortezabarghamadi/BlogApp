@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MuWNz78VbP8=",
+  "dgSpecHash": "peXIeEmu52s=",
   "success": true,
-  "projectFilePath": "D:\\posheh darsi\\پروژه وبلاگ\\BlogApp\\BlogApp.IOC\\BlogApp.IOC.csproj",
+  "projectFilePath": "D:\\posheh darsi\\blog project\\BlogApp\\BlogApp.IOC\\BlogApp.IOC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Morteza\\.nuget\\packages\\automapper\\15.1.0\\automapper.15.1.0.nupkg.sha512",
     "C:\\Users\\Morteza\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",

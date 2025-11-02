@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BlogApp.Application.DTOs
 {
-    public class PostDTO
+    public class PostDto
     {
         public int Id { get; set; }
         public string Title { get; set; } = string.Empty;

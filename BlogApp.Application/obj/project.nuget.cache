@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BrZ6gFn0uYE=",
+  "dgSpecHash": "lixw5TmCu6Y=",
   "success": true,
-  "projectFilePath": "D:\\posheh darsi\\پروژه وبلاگ\\BlogApp\\BlogApp.Application\\BlogApp.Application.csproj",
+  "projectFilePath": "D:\\posheh darsi\\blog project\\BlogApp\\BlogApp.Application\\BlogApp.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Morteza\\.nuget\\packages\\automapper\\15.1.0\\automapper.15.1.0.nupkg.sha512",
     "C:\\Users\\Morteza\\.nuget\\packages\\fluentvalidation\\12.0.0\\fluentvalidation.12.0.0.nupkg.sha512",

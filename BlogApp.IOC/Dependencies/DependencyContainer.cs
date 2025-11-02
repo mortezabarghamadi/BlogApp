@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BlogApp.Application.Services.Implementations;
+using BlogApp.Application.Services.Interfaces;
 using BlogApp.Domain.Interfaces;
 using BlogApp.Infrastructure.Repositories;
 
@@ -15,6 +17,7 @@ namespace BlogApp.IOC.Dependencies
         {
             #region Service
 
+            service.AddScoped<IUserService, UserService>();
             #endregion
 
             #region Repository

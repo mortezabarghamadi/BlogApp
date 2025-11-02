@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8+r3LNk7qok=",
+  "dgSpecHash": "LC/xvXQq6ww=",
   "success": true,
-  "projectFilePath": "D:\\posheh darsi\\پروژه وبلاگ\\BlogApp\\BlogApp.Infrastructure\\BlogApp.Infrastructure.csproj",
+  "projectFilePath": "D:\\posheh darsi\\blog project\\BlogApp\\BlogApp.Infrastructure\\BlogApp.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Morteza\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Morteza\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

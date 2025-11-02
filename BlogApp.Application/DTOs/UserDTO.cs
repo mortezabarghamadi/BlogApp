@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BlogApp.Application.DTOs
 {
-    public class UserDTO
+    public class UserDto
     {
         public int Id { get; set; }
         public string UserName { get; set; } = string.Empty;

@@ -2533,11 +2533,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\posheh darsi\\پروژه وبلاگ\\BlogApp\\BlogApp.IOC\\BlogApp.IOC.csproj",
+      "projectUniqueName": "D:\\posheh darsi\\blog project\\BlogApp\\BlogApp.IOC\\BlogApp.IOC.csproj",
       "projectName": "BlogApp.IOC",
-      "projectPath": "D:\\posheh darsi\\پروژه وبلاگ\\BlogApp\\BlogApp.IOC\\BlogApp.IOC.csproj",
+      "projectPath": "D:\\posheh darsi\\blog project\\BlogApp\\BlogApp.IOC\\BlogApp.IOC.csproj",
       "packagesPath": "C:\\Users\\Morteza\\.nuget\\packages\\",
-      "outputPath": "D:\\posheh darsi\\پروژه وبلاگ\\BlogApp\\BlogApp.IOC\\obj\\",
+      "outputPath": "D:\\posheh darsi\\blog project\\BlogApp\\BlogApp.IOC\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2559,14 +2559,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\posheh darsi\\پروژه وبلاگ\\BlogApp\\BlogApp.Application\\BlogApp.Application.csproj": {
-              "projectPath": "D:\\posheh darsi\\پروژه وبلاگ\\BlogApp\\BlogApp.Application\\BlogApp.Application.csproj"
+            "D:\\posheh darsi\\blog project\\BlogApp\\BlogApp.Application\\BlogApp.Application.csproj": {
+              "projectPath": "D:\\posheh darsi\\blog project\\BlogApp\\BlogApp.Application\\BlogApp.Application.csproj"
             },
-            "D:\\posheh darsi\\پروژه وبلاگ\\BlogApp\\BlogApp.Domain\\BlogApp.Domain.csproj": {
-              "projectPath": "D:\\posheh darsi\\پروژه وبلاگ\\BlogApp\\BlogApp.Domain\\BlogApp.Domain.csproj"
+            "D:\\posheh darsi\\blog project\\BlogApp\\BlogApp.Domain\\BlogApp.Domain.csproj": {
+              "projectPath": "D:\\posheh darsi\\blog project\\BlogApp\\BlogApp.Domain\\BlogApp.Domain.csproj"
             },
-            "D:\\posheh darsi\\پروژه وبلاگ\\BlogApp\\BlogApp.Infrastructure\\BlogApp.Infrastructure.csproj": {
-              "projectPath": "D:\\posheh darsi\\پروژه وبلاگ\\BlogApp\\BlogApp.Infrastructure\\BlogApp.Infrastructure.csproj"
+            "D:\\posheh darsi\\blog project\\BlogApp\\BlogApp.Infrastructure\\BlogApp.Infrastructure.csproj": {
+              "projectPath": "D:\\posheh darsi\\blog project\\BlogApp\\BlogApp.Infrastructure\\BlogApp.Infrastructure.csproj"
             }
           }
         }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\posheh darsi\\پروژه وبلاگ\\BlogApp\\BlogApp.Infrastructure\\BlogApp.Infrastructure.csproj": {}
+    "D:\\posheh darsi\\blog project\\BlogApp\\BlogApp.Infrastructure\\BlogApp.Infrastructure.csproj": {}
   },
   "projects": {
-    "D:\\posheh darsi\\پروژه وبلاگ\\BlogApp\\BlogApp.Domain\\BlogApp.Domain.csproj": {
+    "D:\\posheh darsi\\blog project\\BlogApp\\BlogApp.Domain\\BlogApp.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\posheh darsi\\پروژه وبلاگ\\BlogApp\\BlogApp.Domain\\BlogApp.Domain.csproj",
+        "projectUniqueName": "D:\\posheh darsi\\blog project\\BlogApp\\BlogApp.Domain\\BlogApp.Domain.csproj",
         "projectName": "BlogApp.Domain",
-        "projectPath": "D:\\posheh darsi\\پروژه وبلاگ\\BlogApp\\BlogApp.Domain\\BlogApp.Domain.csproj",
+        "projectPath": "D:\\posheh darsi\\blog project\\BlogApp\\BlogApp.Domain\\BlogApp.Domain.csproj",
         "packagesPath": "C:\\Users\\Morteza\\.nuget\\packages\\",
-        "outputPath": "D:\\posheh darsi\\پروژه وبلاگ\\BlogApp\\BlogApp.Domain\\obj\\",
+        "outputPath": "D:\\posheh darsi\\blog project\\BlogApp\\BlogApp.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -70,14 +70,14 @@
         }
       }
     },
-    "D:\\posheh darsi\\پروژه وبلاگ\\BlogApp\\BlogApp.Infrastructure\\BlogApp.Infrastructure.csproj": {
+    "D:\\posheh darsi\\blog project\\BlogApp\\BlogApp.Infrastructure\\BlogApp.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\posheh darsi\\پروژه وبلاگ\\BlogApp\\BlogApp.Infrastructure\\BlogApp.Infrastructure.csproj",
+        "projectUniqueName": "D:\\posheh darsi\\blog project\\BlogApp\\BlogApp.Infrastructure\\BlogApp.Infrastructure.csproj",
         "projectName": "BlogApp.Infrastructure",
-        "projectPath": "D:\\posheh darsi\\پروژه وبلاگ\\BlogApp\\BlogApp.Infrastructure\\BlogApp.Infrastructure.csproj",
+        "projectPath": "D:\\posheh darsi\\blog project\\BlogApp\\BlogApp.Infrastructure\\BlogApp.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\Morteza\\.nuget\\packages\\",
-        "outputPath": "D:\\posheh darsi\\پروژه وبلاگ\\BlogApp\\BlogApp.Infrastructure\\obj\\",
+        "outputPath": "D:\\posheh darsi\\blog project\\BlogApp\\BlogApp.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -99,8 +99,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\posheh darsi\\پروژه وبلاگ\\BlogApp\\BlogApp.Domain\\BlogApp.Domain.csproj": {
-                "projectPath": "D:\\posheh darsi\\پروژه وبلاگ\\BlogApp\\BlogApp.Domain\\BlogApp.Domain.csproj"
+              "D:\\posheh darsi\\blog project\\BlogApp\\BlogApp.Domain\\BlogApp.Domain.csproj": {
+                "projectPath": "D:\\posheh darsi\\blog project\\BlogApp\\BlogApp.Domain\\BlogApp.Domain.csproj"
               }
             }
           }
