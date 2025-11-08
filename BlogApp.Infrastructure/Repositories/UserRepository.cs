@@ -18,6 +18,16 @@ namespace BlogApp.Infrastructure.Repositories
             _context = context;
         }
 
+        public async Task<bool> checkEmailisExist(string email)
+        {
+            return await _context.Users.AnyAsync(p=>p.Email==email);
+        }
+
+        public async Task<User?> checkUserExistByEmailAndPassword(string email, string password)
+        {
+            return await _context.Users.FirstOrDefaultAsync(p => p.Email == email &&p.PasswordHash==password);
+        }
+
         public async Task AddAsync(User user)
         {
             await _context.Users.AddAsync(user);

@@ -1,12 +1,15 @@
 ﻿using BlogApp.Application.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BlogApp.Api.Controllers
 {
+    [Authorize]
+
     public class UsersController : BaseSiteController
     {
-        private IUserService _userService;
+        private readonly IUserService _userService;
 
         public UsersController(IUserService userService)
         {

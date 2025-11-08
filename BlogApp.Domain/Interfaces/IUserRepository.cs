@@ -11,6 +11,9 @@ namespace BlogApp.Domain.Interfaces
     {
         Task<User?> GetByIdAsync(int id);
         Task<User?> GetByEmailAsync(string email);
+        Task<bool> checkEmailisExist(string email);
+        Task<User?> checkUserExistByEmailAndPassword(string email, string password);
+
         Task AddAsync(User user);
         Task SaveChangesAsync();
 

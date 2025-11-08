@@ -311,3 +311,4 @@ D:\posheh darsi\blog project\BlogApp\BlogApp.Api\obj\Debug\net8.0\staticwebasset
 D:\posheh darsi\blog project\BlogApp\BlogApp.Api\obj\Debug\net8.0\BlogApp..465D9D3D.Up2Date
 D:\posheh darsi\blog project\BlogApp\BlogApp.Api\obj\Debug\net8.0\BlogApp.Api.genruntimeconfig.cache
 D:\posheh darsi\blog project\BlogApp\BlogApp.Api\obj\Debug\net8.0\ref\BlogApp.Api.dll
+D:\posheh darsi\blog project\BlogApp\BlogApp.Api\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
