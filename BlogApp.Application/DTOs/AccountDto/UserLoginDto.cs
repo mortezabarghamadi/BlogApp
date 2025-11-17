@@ -14,7 +14,7 @@ namespace BlogApp.Application.DTOs.AccountDto
         {
             Success,
             Error,
-            Usernotfund,
+            UserNotFound,
             EmailIsNotActive
         }
     }

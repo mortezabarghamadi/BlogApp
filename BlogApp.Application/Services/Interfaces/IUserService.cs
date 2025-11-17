@@ -10,9 +10,26 @@ namespace BlogApp.Application.Services.Interfaces
 {
     public interface IUserService
     {
-        Task<UserDto?> GetUserByIdAsync(int id);
-        Task<UserRegisterDto.Registerresult> RegisterUserAsync(UserRegisterDto dto);
-        Task<(UserLoginDto.LoginResult Result, string? Token)> LoginAsync(UserLoginDto dto);
+        #region GetUser
 
+        //گرفتن کاربران با آیدی آنها
+        Task<UserDto?> GetUserByIdAsync(int id);
+
+
+        #endregion
+
+
+        #region Account
+
+        //ثبت نام
+        Task<UserRegisterDto.Registerresult> RegisterUserAsync(UserRegisterDto dto);
+        //ورود
+        Task<(UserLoginDto.LoginResult Result, string? Token)> LoginAsync(UserLoginDto dto);
+        //ارسال ایمیل
+        Task<bool> SendPasswordRecoveryEmailAsync(string email);
+        //بازنشانی رمز عبور
+        Task<bool> ResetPasswordAsync(string token, string newPassword);
+
+        #endregion
     }
 }

@@ -72,12 +72,50 @@ namespace BlogApp.Application.Services.Implementations
 
             var user = await _userRepository.checkUserExistByEmailAndPassword(dto.Email.ToLower().Trim(), hashPassword);
             if (user is null)
-                return (UserLoginDto.LoginResult.Usernotfund, null);
+                return (UserLoginDto.LoginResult.UserNotFound, null);
 
             // ایجاد توکن JWT
             var token = _jwtService.GenerateToken(user);
 
             return (UserLoginDto.LoginResult.Success, token);
+        }
+
+        public async Task<bool> SendPasswordRecoveryEmailAsync(string email)
+        {
+            var user = await _userRepository.GetByEmailAsync(email);
+            if (user is null) {return false;}
+
+            user.PasswordRecoveryCode = Guid.NewGuid().ToString();
+            user.PasswordRecoveryCodeExpireDate = DateTime.Now.AddHours(24);
+
+            _userRepository.UpdateUser(user);
+            await _userRepository.SaveChangesAsync();
+            return true;
+        }
+
+        public async Task<bool> ResetPasswordAsync(string token, string newPassword)
+        {
+            var user = _userRepository.GetAllUsersAsQueryable().FirstOrDefault(p => p.PasswordRecoveryCode == token);
+            if (user==null)
+            {
+                return false;
+            }
+
+            if (user.PasswordRecoveryCodeExpireDate.HasValue&&user.PasswordRecoveryCodeExpireDate<DateTime.Now)
+            {
+                user.PasswordRecoveryCode = null;
+                user.PasswordRecoveryCodeExpireDate = null;
+                _userRepository.UpdateUser(user);
+                await _userRepository.SaveChangesAsync();
+                return false;
+            }
+
+            user.PasswordHash = _passwordHelper.EncodePasswordMd5(newPassword);
+            user.PasswordRecoveryCode = null;
+            user.PasswordRecoveryCodeExpireDate = null;
+            _userRepository.UpdateUser(user);
+            await _userRepository.SaveChangesAsync();
+            return true;
         }
     }
 }

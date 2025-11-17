@@ -24,7 +24,7 @@ namespace BlogApp.Domain.Entities
         public string? PasswordRecoveryCode { get; set; }
 
         [Display(Name = "زمان انقضای توکن بازنشانی")]
-        public DateTime PasswordRecoveryCodeExpireDate { get; set; }
+        public DateTime? PasswordRecoveryCodeExpireDate { get; set; }
         #endregion
 
         #region Navigation

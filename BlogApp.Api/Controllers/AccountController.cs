@@ -46,10 +46,47 @@ namespace BlogApp.Api.Controllers
                     message = "ورود موفق بود.",
                     token = token
                 }),
-                UserLoginDto.LoginResult.Usernotfund => Unauthorized(new { message = "کاربری با این مشخصات یافت نشد."}),
+                UserLoginDto.LoginResult.UserNotFound => Unauthorized(new { message = "کاربری با این مشخصات یافت نشد."}),
                 _ => StatusCode(500, new { message = "خطا در ورود کاربر." })
             };
 
+        }
+
+        [HttpPost("ForgotPassword")]
+        public async Task<IActionResult> ForgotPassword([FromBody]ForgotPasswordDto _forgotPassword)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var result = await _userService.SendPasswordRecoveryEmailAsync(_forgotPassword.Email);
+            if (!result)
+            {
+                return BadRequest("ایمیل یافت نشد");
+            }
+            return Ok("درخواست بازنشانی رمز ارسال شد");
+
+
+        }
+
+        [HttpPost("ResetPassword")]
+        public async Task<IActionResult> ResetPassword([FromBody]ResetPasswordDto _resetPassword)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var result = await _userService.ResetPasswordAsync(_resetPassword.Token, _resetPassword.NewPassword);
+            if (result)
+            {
+                return Ok("پسورد با موفقیت تغییر یافت");
+            }
+            else
+            {
+                return BadRequest("خطا در ثبت پسورد جدید");
+            }
         }
     }
 }

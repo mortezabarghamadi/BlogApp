@@ -1,6 +1,22 @@
 [
   {
     "ContainingType": "BlogApp.Api.Controllers.AccountController",
+    "Method": "ForgotPassword",
+    "RelativePath": "api/Account/ForgotPassword",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "_forgotPassword",
+        "Type": "BlogApp.Application.DTOs.AccountDto.ForgotPasswordDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BlogApp.Api.Controllers.AccountController",
     "Method": "Login",
     "RelativePath": "api/Account/Login",
     "HttpMethod": "POST",
@@ -26,6 +42,22 @@
       {
         "Name": "dto",
         "Type": "BlogApp.Application.DTOs.AccountDto.UserRegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BlogApp.Api.Controllers.AccountController",
+    "Method": "ResetPassword",
+    "RelativePath": "api/Account/ResetPassword",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "_resetPassword",
+        "Type": "BlogApp.Application.DTOs.AccountDto.ResetPasswordDto",
         "IsRequired": true
       }
     ],
