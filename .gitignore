@@ -1,5 +1,8 @@
-.vs/ 
-bin/ 
-obj/ 
-Debug/ 
-Release/ 
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.cache
+bin/
+obj/
+

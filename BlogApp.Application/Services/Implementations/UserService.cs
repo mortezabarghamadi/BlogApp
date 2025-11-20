@@ -13,17 +13,26 @@ using BlogApp.Application.Security.Passwordhelper.Interfaces;
 
 namespace BlogApp.Application.Services.Implementations
 {
-    public class UserService:IUserService
+    public class UserService : IUserService
     {
         private readonly IUserRepository _userRepository;
         private readonly IJwtService _jwtService;
         private readonly IPasswordHelper _passwordHelper;
+        private readonly IProfileRepository _profileRepository;
+        private readonly IProfileService _profileService;
 
-        public UserService(IUserRepository userRepository, IJwtService jwtService, IPasswordHelper passwordHelper)
+        public UserService(
+            IUserRepository userRepository,
+            IJwtService jwtService,
+            IPasswordHelper passwordHelper,
+            IProfileRepository profileRepository,
+            IProfileService profileService)
         {
             _userRepository = userRepository;
             _jwtService = jwtService;
             _passwordHelper = passwordHelper;
+            _profileRepository = profileRepository;
+            _profileService = profileService;
         }
 
         public async Task<UserDto?> GetUserByIdAsync(int id)
@@ -41,17 +50,12 @@ namespace BlogApp.Application.Services.Implementations
 
         public async Task<UserRegisterDto.Registerresult> RegisterUserAsync(UserRegisterDto dto)
         {
-            // بررسی تکراری نبودن ایمیل
-
             #region Validations
-
             var existingUser = await _userRepository.checkEmailisExist(dto.Email);
             if (existingUser)
                 return UserRegisterDto.Registerresult.EmailIsExist;
-
             #endregion
 
-            // ایجاد کاربر جدید
             var newUser = new User
             {
                 UserName = dto.UserName,
@@ -62,8 +66,10 @@ namespace BlogApp.Application.Services.Implementations
             await _userRepository.AddAsync(newUser);
             await _userRepository.SaveChangesAsync();
 
-            return UserRegisterDto.Registerresult.Success;
+            // اضافه کردن پروفایل برای کاربر جدید
+            await _profileService.CreateProfileForNewUserAsync(newUser.Id, dto.Email);
 
+            return UserRegisterDto.Registerresult.Success;
         }
 
         public async Task<(UserLoginDto.LoginResult Result, string? Token)> LoginAsync(UserLoginDto dto)
@@ -74,16 +80,14 @@ namespace BlogApp.Application.Services.Implementations
             if (user is null)
                 return (UserLoginDto.LoginResult.UserNotFound, null);
 
-            // ایجاد توکن JWT
             var token = _jwtService.GenerateToken(user);
-
             return (UserLoginDto.LoginResult.Success, token);
         }
 
         public async Task<bool> SendPasswordRecoveryEmailAsync(string email)
         {
             var user = await _userRepository.GetByEmailAsync(email);
-            if (user is null) {return false;}
+            if (user is null) return false;
 
             user.PasswordRecoveryCode = Guid.NewGuid().ToString();
             user.PasswordRecoveryCodeExpireDate = DateTime.Now.AddHours(24);
@@ -96,12 +100,9 @@ namespace BlogApp.Application.Services.Implementations
         public async Task<bool> ResetPasswordAsync(string token, string newPassword)
         {
             var user = _userRepository.GetAllUsersAsQueryable().FirstOrDefault(p => p.PasswordRecoveryCode == token);
-            if (user==null)
-            {
-                return false;
-            }
+            if (user == null) return false;
 
-            if (user.PasswordRecoveryCodeExpireDate.HasValue&&user.PasswordRecoveryCodeExpireDate<DateTime.Now)
+            if (user.PasswordRecoveryCodeExpireDate.HasValue && user.PasswordRecoveryCodeExpireDate < DateTime.Now)
             {
                 user.PasswordRecoveryCode = null;
                 user.PasswordRecoveryCodeExpireDate = null;
