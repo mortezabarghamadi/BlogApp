@@ -21,16 +21,18 @@ namespace BlogApp.IOC.Dependencies
         {
             #region Service
 
+            service.AddScoped<IProfileService,ProfileService>();
             service.AddScoped<IUserService, UserService>();
             service.AddScoped<IJwtService, JwtService>();
             service.AddScoped<IPasswordHelper, PasswordHelper>();
             #endregion
-            
+
             #region Repository
 
-            service.AddScoped<IUserRepository,UserRepository>();
-            service.AddScoped<IPostRepository,PostRepository>();
-            service.AddScoped<ICommentRepository,CommentRepository>();
+            service.AddScoped<IUserRepository, UserRepository>();
+            service.AddScoped<IPostRepository, PostRepository>();
+            service.AddScoped<ICommentRepository, CommentRepository>();
+            service.AddScoped<IProfileRepository, ProfileRepository>();
 
             #endregion
         }

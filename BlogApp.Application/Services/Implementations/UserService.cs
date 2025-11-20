@@ -18,12 +18,18 @@ namespace BlogApp.Application.Services.Implementations
         private readonly IUserRepository _userRepository;
         private readonly IJwtService _jwtService;
         private readonly IPasswordHelper _passwordHelper;
+        private readonly IProfileRepository _profileRepository;
+        private readonly IProfileService _profileService;
 
-        public UserService(IUserRepository userRepository, IJwtService jwtService, IPasswordHelper passwordHelper)
+        public UserService(IUserRepository userRepository, IJwtService jwtService
+            , IPasswordHelper passwordHelper, IProfileRepository profileRepository,
+            IProfileService profileService)
         {
             _userRepository = userRepository;
             _jwtService = jwtService;
             _passwordHelper = passwordHelper;
+            _profileRepository = profileRepository;
+            _profileService= profileService;
         }
 
         public async Task<UserDto?> GetUserByIdAsync(int id)
@@ -61,7 +67,7 @@ namespace BlogApp.Application.Services.Implementations
 
             await _userRepository.AddAsync(newUser);
             await _userRepository.SaveChangesAsync();
-
+            await _profileService.CreateProfileForNewUserAsync(newUser.Id, dto.Email);
             return UserRegisterDto.Registerresult.Success;
 
         }

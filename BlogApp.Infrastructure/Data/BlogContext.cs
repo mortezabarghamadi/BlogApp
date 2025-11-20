@@ -33,7 +33,9 @@ namespace BlogApp.Infrastructure.Data
             modelBuilder.Entity<User>()
                 .HasOne(u => u.Profile)
                 .WithOne(p => p.User)
-                .HasForeignKey<Profile>(p => p.UserId);
+                .HasForeignKey<Profile>(p => p.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
 
             // User-Post (1-Many)
             modelBuilder.Entity<User>()
