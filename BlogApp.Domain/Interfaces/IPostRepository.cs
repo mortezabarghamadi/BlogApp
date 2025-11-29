@@ -9,9 +9,15 @@ namespace BlogApp.Domain.Interfaces
 {
     public interface IPostRepository
     {
-        Task<Post?> GetByIdAsync(int id);
+        #region Get
+
+        Task<Post?> GetByIdAsync(int postid);
+        Task<IEnumerable<Post?>> GetAllAsync();
+
+        #endregion
         Task AddAsync(Post post);
-        Task<IEnumerable<Post>> GetAllAsync();
+        void DeletePost(Post post);
+        void UpdateDelete(Post post);
         Task SaveChangesAsync();
     }
 }

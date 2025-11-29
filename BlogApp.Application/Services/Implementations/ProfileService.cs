@@ -7,6 +7,7 @@ using BlogApp.Application.DTOs;
 using BlogApp.Application.Services.Interfaces;
 using BlogApp.Domain.Entities;
 using BlogApp.Domain.Interfaces;
+using Microsoft.AspNetCore.Http;
 
 namespace BlogApp.Application.Services.Implementations
 {
@@ -38,6 +39,48 @@ namespace BlogApp.Application.Services.Implementations
                 IsPublic = profile.IsPublic
             };
         }
+
+        public async Task<UploadImageResultDto> UploadProfileImageAsync(int userId, IFormFile file)
+        {
+            // ۱) چک کردن پروفایل کاربر
+            var profile = await _ProfileRepository.GetByUserIdAsync(userId);
+            if (profile == null)
+                return new(false, "پروفایل یافت نشد");
+
+            // ۲) اعتبارسنجی فایل
+            var allowedTypes = new[] { "image/png", "image/jpeg" };
+
+            if (!allowedTypes.Contains(file.ContentType))
+                return new(false, "فقط JPG یا PNG مجاز است");
+
+            if (file.Length > 5 * 1024 * 1024)
+                return new(false, "حداکثر حجم فایل ۵ مگابایت است");
+
+            // ۳) ذخیره‌سازی فایل
+            var folder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads", "profile-images");
+            if (!Directory.Exists(folder))
+                Directory.CreateDirectory(folder);
+
+            var ext = Path.GetExtension(file.FileName);
+            var fileName = $"{Guid.NewGuid()}{ext}";
+            var fullPath = Path.Combine(folder, fileName);
+
+            using var stream = new FileStream(fullPath, FileMode.Create);
+            await file.CopyToAsync(stream);
+
+            // ۴) ساخت URL
+            var fileUrl = $"/uploads/profile-images/{fileName}";
+
+            // ۵) ذخیره در دیتابیس
+            profile.ProfileImageUrl = fileUrl;
+            profile.UpdatedAt = DateTime.UtcNow;
+
+            _ProfileRepository.UpdateProfile(profile);
+            await _ProfileRepository.SaveChangesAsync();
+
+            return new(true, "تصویر با موفقیت آپلود شد", fileUrl);
+        }
+
 
 
         public async Task CreateProfileForNewUserAsync(int userId, string email)

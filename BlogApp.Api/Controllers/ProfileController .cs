@@ -59,5 +59,22 @@ namespace BlogApp.Api.Controllers
 
             return Ok("پروفایل با موفقیت حذف شد.");
         }
+
+        [HttpPost("upload-image")]
+        public async Task<IActionResult> UploadImage(IFormFile file)
+        {
+            if (file == null || file.Length == 0)
+            {
+                return BadRequest("فایل ارسالی یافت نشد");
+            }
+            var userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+
+            var result = await _profileService.UploadProfileImageAsync(userId, file);
+
+            if (!result.Success)
+                return BadRequest(result.Message);
+
+            return Ok(new { ImageUrl = result.ImageUrl });
+        }
     }
-}
+    }

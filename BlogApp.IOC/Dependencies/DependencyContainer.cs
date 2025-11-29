@@ -25,7 +25,7 @@ namespace BlogApp.IOC.Dependencies
             service.AddScoped<IUserService, UserService>();
             service.AddScoped<IJwtService, JwtService>();
             service.AddScoped<IPasswordHelper, PasswordHelper>();
-
+            service.AddScoped<IPostService, PostService>();
             #endregion
 
             #region Repository
@@ -34,6 +34,7 @@ namespace BlogApp.IOC.Dependencies
             service.AddScoped<IPostRepository, PostRepository>();
             service.AddScoped<ICommentRepository, CommentRepository>();
             service.AddScoped<IProfileRepository, ProfileRepository>();
+            service.AddScoped<IPostRepository, PostRepository>();
 
             #endregion
         }
